@@ -1,6 +1,6 @@
-import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons';
-import { Code, Link as ChakraLink, List, ListIcon, ListItem, Text } from '@chakra-ui/react';
+import { Text } from '@chakra-ui/react';
 
+import Autocomplete from '../components/Autocomplete';
 import { Container } from '../components/Container';
 import { CTA } from '../components/CTA';
 import { DarkModeSwitch } from '../components/DarkModeSwitch';
@@ -12,12 +12,13 @@ const Index = () => (
   <Container height='100vh'>
     <Hero />
     <Main>
-      <Text>
+      <Autocomplete />
+      {/*       <Text>
         Example repository of <Code>Next.js</Code> + <Code>chakra-ui</Code> +{' '}
         <Code>typescript</Code>.
-      </Text>
+      </Text> */}
 
-      <List spacing={3} my={0}>
+      {/*       <List spacing={3} my={0}>
         <ListItem>
           <ListIcon as={CheckCircleIcon} color='green.500' />
           <ChakraLink
@@ -35,7 +36,7 @@ const Index = () => (
             Next.js <LinkIcon />
           </ChakraLink>
         </ListItem>
-      </List>
+      </List> */}
     </Main>
 
     <DarkModeSwitch />
