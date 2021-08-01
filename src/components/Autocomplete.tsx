@@ -47,6 +47,7 @@ const Autocomplete = ({ items }: { items: string[] }) => {
             overflowY='auto'
             bg={bgColor[colorMode]}
             color={color[colorMode]}
+            zIndex='10'
           >
             {filteredItems.map((item) => (
               <ListItem
