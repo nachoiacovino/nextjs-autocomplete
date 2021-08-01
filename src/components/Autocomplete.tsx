@@ -1,7 +1,12 @@
-import { Box, Input, List, ListItem } from '@chakra-ui/react';
+import { Box, Input, List, ListItem, useColorMode } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 
 const Autocomplete = ({ items }: { items: string[] }) => {
+  const { colorMode } = useColorMode();
+  const bgColor = { light: 'gray.50', dark: 'gray.900' };
+  const color = { light: 'black', dark: 'white' };
+  const hoverBgColor = { light: 'gray.100', dark: 'gray.700' };
+
   const [value, setValue] = useState('');
   const [filteredItems, setFilteredItems] = useState(items);
   const [selectedItem, setSelectedItem] = useState('');
@@ -36,7 +41,8 @@ const Autocomplete = ({ items }: { items: string[] }) => {
             width='500px'
             maxHeight='200px'
             overflowY='auto'
-            bg='inherit'
+            bg={bgColor[colorMode]}
+            color={color[colorMode]}
           >
             {filteredItems.map((item) => (
               <ListItem
@@ -46,6 +52,7 @@ const Autocomplete = ({ items }: { items: string[] }) => {
                 borderBottom='1px solid rgba(0,0,0,0.01)'
                 onClick={() => handleClick(item)}
                 cursor='pointer'
+                _hover={{ backgroundColor: hoverBgColor[colorMode] }}
               >
                 {item}
               </ListItem>
