@@ -1,39 +1,33 @@
-# Example app with [chakra-ui](https://github.com/chakra-ui/chakra-ui) and Typescript
+# Autocomplete with [chakra-ui](https://github.com/chakra-ui/chakra-ui) and TypeScript
 
-This example features how to use [chakra-ui](https://github.com/chakra-ui/chakra-ui) as the component library within a Next.js app with typescript.
+You can see a live version of this project [here](https://nextjs-autocomplete.vercel.app/).
 
-Next.js and chakra-ui have built-in TypeScript declarations, so we'll get autocompletion for their modules straight away.
+The project was bootstrapped with [with-chakra-ui-typescript](https://github.com/vercel/next.js/tree/canary/examples/with-chakra-ui-typescript).
 
-We are connecting the Next.js `_app.js` with `chakra-ui`'s Provider and theme so the pages can have app-wide dark/light mode. We are also creating some components which shows the usage of `chakra-ui`'s style props.
+In this app, you can search for countries and when you select one, it will render it in a card.
 
-## Preview
+The countries are just an example, the Autocomplete component is completely reusable so you can pass any array of strings.
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+The app was built with Next 11, React 17 with hooks, Chakra UI and TypeScript.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-chakra-ui-typescript)
+The app has dark mode.
 
-## Deploy your own
+## Available Scripts
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+In your console, first you need to clone the repository
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-chakra-ui-typescript&project-name=with-chakra-ui-typescript&repository-name=with-chakra-ui-typescript)
+### `git clone https://github.com/nachoiacovino/nextjs-autocomplete.git`
 
-## How to use
+After that, you need install the dependencies with:
 
-### Using `create-next-app`
+### `yarn`
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+Then, you can launch the server with:
 
-```bash
-npx create-next-app --example with-chakra-ui-typescript with-chakra-ui-typescript-app
-# or
-yarn create next-app --example with-chakra-ui-typescript with-chakra-ui-typescript-app
-```
+### `yarn dev`
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+This runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Notes
-
-Chakra has supported Gradients and RTL in `v1.1`. To utilize RTL, [add RTL direction and swap](https://chakra-ui.com/docs/features/rtl-support).
-
-If you don't have multi-direction app, you should make `<Html lang="ar" dir="rtl">` inside `_document.ts`.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
