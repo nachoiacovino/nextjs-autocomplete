@@ -4,6 +4,7 @@ import Autocomplete from '../components/Autocomplete';
 import { Container } from '../components/Container';
 import { DarkModeSwitch } from '../components/DarkModeSwitch';
 import { Footer } from '../components/Footer';
+import { Hero } from '../components/Hero';
 import { Main } from '../components/Main';
 import countries from '../data/countries.json';
 
@@ -12,13 +13,9 @@ const Index = () => {
 
   return (
     <Container height='100vh'>
-      {/*     <Hero /> */}
+      <Hero />
       <Main>
         <Autocomplete items={namedCountries} />
-        {/*       <Text>
-        Example repository of <Code>Next.js</Code> + <Code>chakra-ui</Code> +{' '}
-        <Code>typescript</Code>.
-      </Text> */}
 
         {/*       <List spacing={3} my={0}>
         <ListItem>

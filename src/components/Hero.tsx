@@ -4,7 +4,7 @@ export const Hero = ({ title }: { title: string }) => (
   <Flex
     justifyContent='center'
     alignItems='center'
-    height='100vh'
+    mt='150px'
     bgGradient='linear(to-l, #7928CA, #FF0080)'
     bgClip='text'
   >
@@ -13,5 +13,5 @@ export const Hero = ({ title }: { title: string }) => (
 );
 
 Hero.defaultProps = {
-  title: 'with-chakra-ui-typescript',
+  title: 'Countries Autocomplete',
 };
