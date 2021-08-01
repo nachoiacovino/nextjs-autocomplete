@@ -5,18 +5,22 @@ import { Container } from '../components/Container';
 import { DarkModeSwitch } from '../components/DarkModeSwitch';
 import { Footer } from '../components/Footer';
 import { Main } from '../components/Main';
+import countries from '../data/countries.json';
 
-const Index = () => (
-  <Container height='100vh'>
-    {/*     <Hero /> */}
-    <Main>
-      <Autocomplete />
-      {/*       <Text>
+const Index = () => {
+  const namedCountries = countries.map((country) => country.name);
+
+  return (
+    <Container height='100vh'>
+      {/*     <Hero /> */}
+      <Main>
+        <Autocomplete items={namedCountries} />
+        {/*       <Text>
         Example repository of <Code>Next.js</Code> + <Code>chakra-ui</Code> +{' '}
         <Code>typescript</Code>.
       </Text> */}
 
-      {/*       <List spacing={3} my={0}>
+        {/*       <List spacing={3} my={0}>
         <ListItem>
           <ListIcon as={CheckCircleIcon} color='green.500' />
           <ChakraLink
@@ -35,13 +39,14 @@ const Index = () => (
           </ChakraLink>
         </ListItem>
       </List> */}
-    </Main>
+      </Main>
 
-    <DarkModeSwitch />
-    <Footer>
-      <Text>Built with ❤️</Text>
-    </Footer>
-  </Container>
-);
+      <DarkModeSwitch />
+      <Footer>
+        <Text>Built with ❤️</Text>
+      </Footer>
+    </Container>
+  );
+};
 
 export default Index;

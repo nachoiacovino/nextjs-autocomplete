@@ -1,27 +1,19 @@
 import { Box, Input, List, ListItem } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 
-import countries from '../data/countries.json';
-
-const Autocomplete = () => {
+const Autocomplete = ({ items }: { items: string[] }) => {
   const [value, setValue] = useState('');
-  const [selectedValue, setSelectedValue] = useState('');
-
-  const nameCountries = countries.map((country) => country.name);
-  const [filteredCountries, setFilteredCountries] = useState(nameCountries);
-
-  const handleChange = (e) => setValue(e.target.value);
+  const [filteredItems, setFilteredItems] = useState(items);
+  const [selectedItem, setSelectedItem] = useState('');
 
   const handleClick = (value) => {
-    setSelectedValue(value);
+    setSelectedItem(value);
     setValue('');
   };
 
   useEffect(() => {
-    setFilteredCountries(
-      nameCountries.filter((country) =>
-        country.toLowerCase().includes(value.toLowerCase()),
-      ),
+    setFilteredItems(
+      items.filter((item) => item.toLowerCase().includes(value.toLowerCase())),
     );
   }, [value]);
 
@@ -29,12 +21,12 @@ const Autocomplete = () => {
     <Box pb={4} mb={4} margin='auto'>
       <Input
         value={value}
-        onChange={handleChange}
+        onChange={(e) => setValue(e.target.value)}
         placeholder='Search'
         width='500px'
       />
       <Box position='absolute'>
-        {value !== '' && filteredCountries.length !== 0 && (
+        {value !== '' && filteredItems.length !== 0 && (
           <List
             position='relative'
             borderRadius='4px'
@@ -46,22 +38,22 @@ const Autocomplete = () => {
             overflowY='auto'
             bg='inherit'
           >
-            {filteredCountries.map((country) => (
+            {filteredItems.map((item) => (
               <ListItem
-                key={country}
+                key={item}
                 px={3}
                 py={2}
                 borderBottom='1px solid rgba(0,0,0,0.01)'
-                onClick={() => handleClick(country)}
+                onClick={() => handleClick(item)}
                 cursor='pointer'
               >
-                {country}
+                {item}
               </ListItem>
             ))}
           </List>
         )}
       </Box>
-      {selectedValue && <p>{selectedValue}</p>}
+      {selectedItem && <p>{selectedItem}</p>}
     </Box>
   );
 };
