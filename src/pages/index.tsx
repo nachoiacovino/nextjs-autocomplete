@@ -2,15 +2,13 @@ import { Text } from '@chakra-ui/react';
 
 import Autocomplete from '../components/Autocomplete';
 import { Container } from '../components/Container';
-import { CTA } from '../components/CTA';
 import { DarkModeSwitch } from '../components/DarkModeSwitch';
 import { Footer } from '../components/Footer';
-import { Hero } from '../components/Hero';
 import { Main } from '../components/Main';
 
 const Index = () => (
   <Container height='100vh'>
-    <Hero />
+    {/*     <Hero /> */}
     <Main>
       <Autocomplete />
       {/*       <Text>
@@ -41,9 +39,8 @@ const Index = () => (
 
     <DarkModeSwitch />
     <Footer>
-      <Text>Next ❤️ Chakra</Text>
+      <Text>Built with ❤️</Text>
     </Footer>
-    <CTA />
   </Container>
 );
 
