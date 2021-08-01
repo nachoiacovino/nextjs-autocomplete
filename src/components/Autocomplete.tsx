@@ -29,6 +29,7 @@ const Autocomplete = ({ items }: { items: string[] }) => {
         onChange={(e) => setValue(e.target.value)}
         placeholder='Search'
         width='500px'
+        maxW='80vw'
         bg={bgColor[colorMode]}
         color={color[colorMode]}
       />
@@ -41,6 +42,7 @@ const Autocomplete = ({ items }: { items: string[] }) => {
             boxShadow='6px 5px 8px rgba(0,50,30,0.02)'
             marginTop='8px'
             width='500px'
+            maxW='80vw'
             maxHeight='200px'
             overflowY='auto'
             bg={bgColor[colorMode]}
