@@ -1,9 +1,9 @@
-import { Box, Input, List, ListItem, useColorMode } from '@chakra-ui/react';
+import { Box, Heading, Input, List, ListItem, useColorMode, useColorModeValue } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 
 const Autocomplete = ({ items }: { items: string[] }) => {
   const { colorMode } = useColorMode();
-  const bgColor = { light: 'gray.50', dark: 'gray.900' };
+  const bgColor = { light: 'white', dark: 'gray.900' };
   const color = { light: 'black', dark: 'white' };
   const hoverBgColor = { light: 'gray.100', dark: 'gray.700' };
 
@@ -29,6 +29,8 @@ const Autocomplete = ({ items }: { items: string[] }) => {
         onChange={(e) => setValue(e.target.value)}
         placeholder='Search'
         width='500px'
+        bg={bgColor[colorMode]}
+        color={color[colorMode]}
       />
       <Box position='absolute'>
         {value !== '' && filteredItems.length !== 0 && (
@@ -60,7 +62,23 @@ const Autocomplete = ({ items }: { items: string[] }) => {
           </List>
         )}
       </Box>
-      {selectedItem && <p>{selectedItem}</p>}
+      {selectedItem && (
+        <Box
+          maxW={'320px'}
+          w={'full'}
+          bg={useColorModeValue('white', 'gray.900')}
+          boxShadow={'2xl'}
+          rounded={'lg'}
+          p={6}
+          textAlign={'center'}
+          m='auto'
+          mt='15px'
+        >
+          <Heading fontSize={'2xl'} fontFamily={'body'}>
+            {selectedItem}
+          </Heading>
+        </Box>
+      )}
     </Box>
   );
 };
